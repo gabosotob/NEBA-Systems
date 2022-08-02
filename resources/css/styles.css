@@ -52,10 +52,16 @@ body {
 }
 
 .body-wrapper {
-  max-width: 960px;
   margin: 0 auto;
   border-left: rgb(126, 126, 126) 1px solid;
   border-right: rgb(126, 126, 126) 1px solid;
+}
+
+@media (min-width: 1040px) {
+  .body-wrapper {
+    min-width: 1040px;
+    width: 90%;
+  }
 }
 
 /* Header */
@@ -120,11 +126,15 @@ main {
 }
 
 main section {
-  height: 500px;
   max-height: 1000px;
 }
 
+main section:first-child {
+  height: 1000px;
+}
+
 main section:nth-child(n+2) {
+  height: auto;
   padding: 10px;
 }
 
@@ -141,7 +151,7 @@ main section+section {
 }
 
 .hero .background-image {
-  background-image: url("https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Teaser/funktionale-programmierung-t.jpg");
+  background-image: url("../images/kari-shea-1SAnrIxw5OY-unsplash.jpg");
   /* filter: blur(5px); */
   background-position: center;
   background-repeat: no-repeat;
@@ -165,23 +175,27 @@ main section+section {
 }
 
 .content {
-  margin: 20px 0;
-  background-color: rgb(0, 0, 0, 35%);
+  margin: 30px 0;
+  background-color: rgb(240, 240, 240, 50%);
   padding: 10px;
-  color: white;
-  border-radius: 5px;
+  color: rgb(0, 0, 0, 80%);
+  /* border-radius: 5px; */
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 3rem;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .hero-description {
-  font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1rem;
   line-height: 25px;
   width: 70%;
+  max-width: 800px;
   padding: 15px;
+  text-transform: uppercase;
 }
 
 /* Footer */
