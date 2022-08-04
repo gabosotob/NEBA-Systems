@@ -44,6 +44,7 @@
 
 html {
   font-family: 'IBM Plex Sans';
+  scroll-snap-type: y proximity;
 }
 
 /* Body */
@@ -73,6 +74,7 @@ header {
   display: flex;
   flex-flow: column nowrap;
   border-bottom: var(--background-color) solid 1px;
+  scroll-snap-align: start;
 }
 
 header::after {
@@ -125,12 +127,20 @@ main {
   padding: 0 20px;
 }
 
+@media (max-width: 1040px) {
+  main {
+    padding: 0;
+  }
+}
+
 main section {
   max-height: 1000px;
+  scroll-snap-align: center;
 }
 
 main section:nth-child(n+2) {
-  height: auto;
+  height: 100vh;
+  
   padding: 10px;
 }
 
@@ -139,7 +149,6 @@ main section+section {
 }
 
 /* Hero */
-
 section.mission {
   height: 100vh;
   overflow: hidden;
