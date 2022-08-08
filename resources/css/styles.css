@@ -197,7 +197,6 @@ section.portfolio {
 
 .portfolio .card {
   width: 80vw;
-  max-width: 800px;
   height: 60vh;
   scroll-snap-align: center;
   margin: 1%;
