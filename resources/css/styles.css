@@ -109,13 +109,20 @@ main {
 
 main section {
   min-height: 100vh;
+  position: relative;
 }
 
 main section:nth-child(n + 2) {
   padding: 10px;
 }
 
-main section+section {
+main section+section::before {
+  --border-width: 90%;
+  position: absolute;
+  top: 0;
+  left: calc((100% - var(--border-width))/2);
+  content: '';
+  width: var(--border-width);
   border-top: var(--lighter-color) solid 1px;
 }
 
@@ -123,6 +130,7 @@ main section+section {
 section.mission {
   height: 100vh;
   scroll-snap-align: center;
+  z-index: 1;
 }
 
 .hero {
