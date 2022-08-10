@@ -115,6 +115,8 @@ main {
 
 main section {
   min-height: 100vh;
+  text-align: center;
+  scroll-snap-align: start;
 }
 
 main section:nth-child(n + 2) {
@@ -187,8 +189,6 @@ section.mission {
 /* Portfolio */
 section.portfolio {
   background: linear-gradient(#1d3e59, 50%, var(--primary-color));
-  text-align: center;
-  scroll-snap-align: start;
 }
 
 .section-title {
