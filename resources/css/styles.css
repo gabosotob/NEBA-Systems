@@ -3,14 +3,12 @@
 }
 
 :root {
-  --lighter-color: #3a404c;
-  --primary-color: #1d2026;
+  --lighterBlack: #3a404c;
+  --bgColor: #1d2026;
   --black: #000000;
-  --footer-height: 65px;
-  --header-height: 300px;
-  --main-min-height: calc(
-    100vh - (var(--header-height) + var(--footer-height))
-  );
+  --footerHeight: 200px;
+  --headerHeight: 300px;
+  --minMainHeight: calc(100vh - (var(--headerHeight) + var(--footerHeight)));
 }
 
 /* Utilities */
@@ -47,13 +45,13 @@
 
 html {
   font-family: "IBM Plex Sans";
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
 /* Body */
 body {
-  background-color: var(--primary-color);
+  background-color: var(--bgColor);
 }
 
 /* Header */
@@ -63,13 +61,15 @@ header {
   padding: 30px 0px;
   display: flex;
   flex-flow: column nowrap;
-  border-bottom: var(--lighter-color) solid 1px;
-  scroll-snap-align: start;
+  border-bottom: var(--lighterBlack) solid 1px;
+  position: sticky;
+  top: 0px;
+  z-index: -1;
 }
 
 header::after {
   content: "";
-  border-bottom: var(--lighter-color) solid 1px;
+  border-bottom: var(--lighterBlack) solid 1px;
   width: 80%;
   top: 0;
   margin: 0 auto;
@@ -112,13 +112,14 @@ header::after {
 
 /* Main */
 main {
-  min-height: var(--main-min-height);
+  min-height: var(--minMainHeight);
 }
 
 main section {
   min-height: 100vh;
   text-align: center;
-  scroll-snap-align: start;
+  background-color: var(--bgColor);
+  z-index: 0;
 }
 
 main section:nth-child(n + 2) {
@@ -126,13 +127,14 @@ main section:nth-child(n + 2) {
 }
 
 main section + section {
-  border-top: var(--lighter-color) solid 1px;
+  border-top: var(--lighterBlack) solid 1px;
 }
 
 /* Hero */
 section.mission {
   height: 100vh;
   scroll-snap-align: center;
+  z-index: 1;
 }
 
 .hero {
@@ -145,9 +147,8 @@ section.mission {
 .hero .background-image {
   background-image: url("../images/carlos-muza-hpjSkU2UYSU-unsplash.jpg");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 0 10px 5px rgb(0 0 0 / 0.3);
+  box-shadow: 0 0 10px 10px rgb(0 0 0 / 0.3);
 }
 
 .hero .content-container {
@@ -166,10 +167,10 @@ section.mission {
 
 .hero .content {
   margin: 30px 0;
-  background-color: rgb(240, 240, 240, 40%);
+  background-color: rgb(0 0 0 / 35%);
   padding: 10px;
-  color: rgb(0, 0, 0, 80%);
-  backdrop-filter: blur(5px);
+  color: rgba(255 255 255 / 100%);
+  backdrop-filter: blur(10px);
 }
 
 .hero-title {
@@ -179,7 +180,6 @@ section.mission {
 }
 
 .hero-description {
-  font-weight: bold;
   font-size: 1rem;
   line-height: 1.5rem;
   width: 70%;
@@ -190,7 +190,10 @@ section.mission {
 
 /* Portfolio */
 section.portfolio {
-  background: linear-gradient(#1d3e59, 50%, var(--primary-color));
+  position: sticky;
+  bottom: -80rem;
+  z-index: -1;
+  background: linear-gradient(#1d3e59, 50%, var(--bgColor));
 }
 
 .section-title {
@@ -223,7 +226,6 @@ section.portfolio {
 
 .portfolio .card {
   width: 80vw;
-  scroll-snap-align: center;
   margin: 2%;
   display: flex;
   justify-content: space-evenly;
@@ -281,7 +283,6 @@ section.portfolio {
 
 /* Members */
 section.members {
-  scroll-snap-align: center;
 }
 
 .members .card-container {
@@ -298,8 +299,7 @@ section.members {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 20px 40px;
-  scroll-snap-align: center;
+  margin: 20px 20px;
 }
 
 .founder-card__figure {
@@ -344,6 +344,5 @@ section.members {
 /* Footer */
 footer {
   background-color: var(--black);
-  height: var(--footer-height);
-  scroll-snap-align: end;
+  height: var(--footerHeight);
 }
