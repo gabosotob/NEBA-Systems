@@ -43,6 +43,40 @@
   background-color: rgb(255, 255, 255, 0.1);
 }
 
+.light-box-shadow {
+  box-shadow: 0 10px 10px 0 rgb(0 0 0 / 0.3);
+}
+
+.arrow {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-top: 2px solid rgba(0 0 0 / 0.5);
+  border-right: 2px solid rgba(0 0 0 / 0.5);
+}
+
+.arrow__down--wide {
+  transform: rotate(135deg) skew(15deg, 15deg);
+}
+
+.line--small {
+  display: inline-block;
+  width: 20%;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  border-top: 2px solid rgba(0 0 0 / 0.2);
+}
+
+.absolute-bottom {
+  position: absolute;
+  bottom: 15px;
+}
+
+.absolute-top {
+  position: absolute;
+  top: 15px;
+}
+
 html {
   font-family: "IBM Plex Sans";
   scroll-snap-type: y proximity;
@@ -64,7 +98,7 @@ header {
   border-bottom: var(--lighterBlack) solid 1px;
   position: sticky;
   top: 0px;
-  z-index: -1;
+  z-index: 0;
 }
 
 header::after {
@@ -105,7 +139,7 @@ header::after {
 
 .main-nav-bar ul a {
   font-size: 1rem;
-  color: rgb(116, 128, 152, 50%);
+  color: rgb(116, 128, 152);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -119,7 +153,8 @@ main section {
   min-height: 100vh;
   text-align: center;
   background-color: var(--bgColor);
-  z-index: 0;
+  position: relative;
+  z-index: 1;
 }
 
 main section:nth-child(n + 2) {
@@ -133,12 +168,17 @@ main section + section {
 /* Hero */
 section.mission {
   height: 100vh;
-  scroll-snap-align: center;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-height: 600px) {
+  section.mission {
+    scroll-snap-align: center;
+  }
 }
 
 .hero {
-  position: relative;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -192,7 +232,6 @@ section.mission {
 section.portfolio {
   position: sticky;
   bottom: -80rem;
-  z-index: -1;
   background: linear-gradient(#1d3e59, 50%, var(--bgColor));
 }
 
@@ -277,8 +316,10 @@ section.portfolio {
 
 .card img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   border-radius: 3px;
-  box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 0.3);
+  filter: drop-shadow(5px 5px 20px rgb(0 0 0 / 0.3));
 }
 
 /* Members */
@@ -308,7 +349,7 @@ section.members {
 
 .founder-card__image {
   height: 100%;
-  width: 100%;
+  width: auto;
   object-fit: cover;
 }
 
@@ -343,6 +384,53 @@ section.members {
 
 /* Footer */
 footer {
-  background-color: var(--black);
+  background: linear-gradient(60deg, var(--bgColor), var(--black));
   height: var(--footerHeight);
+  position: sticky;
+  bottom: 0;
+  z-index: -2;
+}
+
+footer bold {
+  font-weight: bold;
+}
+
+footer * {
+  /* border: red solid 2px; */
+}
+
+.footer-wrapper {
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.footer__logo-section {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer__logo {
+  width: auto;
+  height: 70px;
+  object-fit: contain;
+  filter: drop-shadow(5px 5px 5px black);
+}
+
+.footer__page-email {
+  color: rgba(255 255 255 / 0.5);
+  font-style: italic;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.footer__contact-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  color: rgba(255 255 255 / 0.9);
 }

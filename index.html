@@ -63,7 +63,7 @@
         </nav>
       </header>
 
-      <main>
+      <main class="light-box-shadow">
         <section class="mission" id="mission">
           <div class="hero">
             <div class="container background-image full-size"></div>
@@ -79,10 +79,12 @@
                 trabajo.
               </p>
             </div>
+            <span class="line--small absolute-top"></span>
+            <span class="arrow arrow__down--wide absolute-bottom"></span>
           </div>
         </section>
 
-        <section class="portfolio" id="portfolio">
+        <section class="portfolio">
           <h2 class="section-title">Portafolio</h2>
 
           <div class="wrapper portfolio-wrapper full-size">
@@ -91,7 +93,7 @@
                 <div
                   class="card-section crystal-box caption full-width flex-center"
                 >
-                  <h2 class="title flex-center content">
+                  <h2 class="title flex-center content" id="portfolio">
                     Captura de Formularios
                   </h2>
 
@@ -265,7 +267,21 @@
       </main>
 
       <footer>
-        <div class="full-size footer-wrapper"></div>
+        <div class="full-size footer-wrapper flex-center">
+          <section class="footer__logo-section full-size">
+            <img
+              class="footer__logo"
+              src="./resources/images/Neba Logo.png"
+              alt=""
+            />
+            <p class="footer__page-email">nebasystem@portfolio.com</p>
+          </section>
+          <section class="footer__contact-section full-size">
+            <p class="footer__made-by"><bold>Made By: </bold>Gabriel Soto</p>
+            <p class="footer__email"><bold>E-mail: </bold>gsotob@outlook.com</p>
+            <p class="footer__github"><bold>GitHub: </bold>@gabosotob</p>
+          </section>
+        </div>
       </footer>
     </div>
   </body>
