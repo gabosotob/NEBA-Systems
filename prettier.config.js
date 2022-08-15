@@ -1,4 +1,4 @@
 module.exports = {
   singleAttributePerLine: true,
-  printWidth: 80,
+  printWidth: 120,
 };
