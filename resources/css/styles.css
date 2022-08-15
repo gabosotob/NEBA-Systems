@@ -98,7 +98,7 @@ header {
   border-bottom: var(--lighterBlack) solid 1px;
   position: sticky;
   top: 0px;
-  z-index: 0;
+  z-index: 1;
 }
 
 header::after {
@@ -154,7 +154,7 @@ main section {
   text-align: center;
   background-color: var(--bgColor);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 main section:nth-child(n + 2) {
@@ -165,22 +165,33 @@ main section + section {
   border-top: var(--lighterBlack) solid 1px;
 }
 
+.section-title {
+  color: rgb(255 255 255 / 0.9);
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.title-container {
+  margin: 100px 25%;
+  padding: 30px;
+  width: auto;
+  background-color: rgb(30 128 187 / 0.3);
+}
+
 /* Hero */
 section.mission {
   height: 100vh;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-@media screen and (min-height: 600px) {
+@media screen and (max-height: 750px) {
   section.mission {
     scroll-snap-align: center;
   }
 }
 
 .hero {
-  width: 100%;
-  height: 100%;
   align-items: center;
 }
 
@@ -198,7 +209,6 @@ section.mission {
   transform: translate(-50%, -50%);
   width: 80%;
   height: auto;
-  padding: 10px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -207,8 +217,8 @@ section.mission {
 
 .hero .content {
   margin: 30px 0;
-  background-color: rgb(0 0 0 / 35%);
-  padding: 10px;
+  background-color: rgb(0 0 0 / 30%);
+  padding: 30px;
   color: rgba(255 255 255 / 100%);
   backdrop-filter: blur(10px);
 }
@@ -230,19 +240,14 @@ section.mission {
 
 /* Portfolio */
 section.portfolio {
-  position: sticky;
-  bottom: -80rem;
   background: linear-gradient(#1d3e59, 50%, var(--bgColor));
 }
 
-.section-title {
-  margin: 100px 25%;
-  padding: 30px;
-  color: rgb(255 255 255 / 0.9);
-  text-transform: uppercase;
-  font-size: 3rem;
-  border-radius: 0;
-  background-color: rgb(30 128 187 / 0.3);
+@media only screen and (max-width: 1600px), (max-aspect-ratio: 5/3) {
+  section.portfolio {
+    position: sticky;
+    bottom: -80rem;
+  }
 }
 
 .portfolio-wrapper {
@@ -292,6 +297,12 @@ section.portfolio {
   max-width: 450px;
 }
 
+.caption .content {
+  text-align: center;
+  height: auto;
+  text-shadow: 2px 2px 7px rgb(0 0 0 / 0.3);
+}
+
 .caption .title {
   color: rgba(255 255 255 / 0.8);
   margin-bottom: 1.5rem;
@@ -300,12 +311,6 @@ section.portfolio {
 .caption .description {
   color: rgba(255 255 255 / 0.7);
   font-size: 0.5em;
-}
-
-.caption .content {
-  text-align: center;
-  height: auto;
-  text-shadow: 2px 2px 7px rgb(0 0 0 / 0.3);
 }
 
 .card .image-container {
@@ -388,7 +393,7 @@ footer {
   height: var(--footerHeight);
   position: sticky;
   bottom: 0;
-  z-index: -2;
+  z-index: 0;
 }
 
 footer bold {
