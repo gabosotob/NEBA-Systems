@@ -270,6 +270,7 @@ section.portfolio {
 
 .portfolio .card {
   width: 80vw;
+  height: 80vh;
   margin: 2%;
   display: flex;
   justify-content: space-evenly;
@@ -294,7 +295,7 @@ section.portfolio {
   flex-direction: column;
   font-size: 2rem;
   padding: 2rem;
-  max-width: 450px;
+  max-width: 400px;
 }
 
 .caption .content {
@@ -313,15 +314,11 @@ section.portfolio {
   font-size: 0.5em;
 }
 
-.card .image-container {
-  max-height: 90%;
-  display: flex;
-  justify-content: center;
-}
-
 .card img {
-  width: 100%;
-  object-fit: contain;
+  width: auto;
+  max-height: 90%;
+  /* margin: 0 40px; */
+  /* padding: 0 40px; */
   border-radius: 3px;
   filter: drop-shadow(5px 5px 20px rgb(0 0 0 / 0.3));
 }
@@ -352,8 +349,7 @@ section.members {
 }
 
 .founder-card__image {
-  height: 100%;
-  width: auto;
+  width: 100%;
   object-fit: cover;
 }
 
