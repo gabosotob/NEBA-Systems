@@ -153,7 +153,7 @@ header::after {
   text-align: center;
   box-shadow: 0 0 0 0 black;
   border-radius: 1.5rem;
-  transition: all 75ms ease-out;
+  transition: all 0.2s ease-out 0.1s;
 }
 
 .main-nav-bar ul li {
@@ -162,18 +162,18 @@ header::after {
 }
 
 .main-nav-bar ul li:hover .hovered {
-  font-size: 1.2rem;
   padding: 20px;
+  scale: 1.2;
   background-color: rgba(255 255 255 / 0.04);
   border-radius: 0.5rem;
   box-shadow: 0 5px 20px 0 rgba(0 0 0 / 0.25);
+  transition: all 100ms ease-out;
 }
 
 .main-nav-bar ul li:active .hovered {
   color: rgb(116 128 152 / 0.75);
   transition: all 50ms ease-in-out;
   position: relative;
-  font-size: 1rem;
   background-color: rgba(255 255 255 / 0.05);
   box-shadow: 0 0 0 0 rgba(0 0 0 / 0);
 }
@@ -351,15 +351,11 @@ section.portfolio {
 .card img {
   width: auto;
   max-height: 90%;
-  /* margin: 0 40px; */
-  /* padding: 0 40px; */
   border-radius: 3px;
   filter: drop-shadow(5px 5px 20px rgb(0 0 0 / 0.3));
 }
 
 /* Members */
-section.members {
-}
 
 .members .card-container {
   display: flex;
@@ -428,10 +424,6 @@ footer {
 
 footer bold {
   font-weight: bold;
-}
-
-footer * {
-  /* border: red solid 2px; */
 }
 
 .footer-wrapper {
