@@ -135,6 +135,14 @@ header::after {
 
 .main-nav-bar ul li {
   list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 1rem;
+  height: 1rem;
+  overflow: visible;
 }
 
 .main-nav-bar ul a {
@@ -142,6 +150,32 @@ header::after {
   color: rgb(116, 128, 152);
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 0 0 0 black;
+  border-radius: 1.5rem;
+  transition: all 75ms ease-out;
+}
+
+.main-nav-bar ul li {
+  width: 120px;
+  height: 50px;
+}
+
+.main-nav-bar ul li:hover .hovered {
+  font-size: 1.2rem;
+  padding: 20px;
+  background-color: rgba(255 255 255 / 0.04);
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 20px 0 rgba(0 0 0 / 0.25);
+}
+
+.main-nav-bar ul li:active .hovered {
+  color: rgb(116 128 152 / 0.75);
+  transition: all 50ms ease-in-out;
+  position: relative;
+  font-size: 1rem;
+  background-color: rgba(255 255 255 / 0.05);
+  box-shadow: 0 0 0 0 rgba(0 0 0 / 0);
 }
 
 /* Main */
